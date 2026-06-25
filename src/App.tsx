@@ -17,6 +17,7 @@ const ScriptPage = lazy(() => import('./features/script/components/ScriptPage'))
 const SceneDetailPage = lazy(() => import('./features/script/components/SceneDetailPage'));
 const ShotListPage = lazy(() => import('./features/shotlist/components/ShotListPage'));
 const SettingsPage = lazy(() => import('./features/dashboard/components/SettingsPage'));
+const CalculatorPage = lazy(() => import('./features/calculator/components/CalculatorPage'));
 
 function PageFallback() {
   return (
@@ -118,6 +119,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageFallback />}>
             <SettingsPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'calculator',
+        element: (
+          <Suspense fallback={<PageFallback />}>
+            <CalculatorPage />
           </Suspense>
         ),
       },
